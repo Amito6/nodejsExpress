@@ -12,6 +12,8 @@ const app = express();
 
 const indexRouter = require("./routes/index.routes");
 const signupRouter = require("./routes/signup.routes");
+const companyRouter = require("./routes/company.routes");
+const { verifyToken } = require('./services/token.service');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +32,30 @@ app.use(multipart);
 
 app.use("/",indexRouter);
 app.use("/api/signup",signupRouter);
+
+//security to amke private api
+
+app.use((request,response,next)=>{
+  const tokenRes = verifyToken(request);
+  if(tokenRes){
+    if(tokenRes.isVerified){
+      next();
+    }
+    else{
+      response.status(401);
+      response.json({
+        message : "Permission denied"
+      });
+    }
+  }
+ 
+})
+
+
+//private api
+app.use("/api/private/company",companyRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
