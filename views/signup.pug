@@ -1,0 +1,26 @@
+div.modal#signup-modal.animate__animated.animate__zoomIn
+    div.modal-dialog.modal-lg.modal-dialog-centered.show
+        div.modal-content 
+            div.modal-body.p-2
+                div.row 
+                    div.col-md-5.d-flex.justify-content-center.align-items-center
+                        img(src="images/signup.jpg", width="100%" alt="")
+                    div.col-md-7.p-3
+                        h1.display-6.fw-bold.mb-3(style="font-size:25px") Create My vita Account With us!!
+                        form#signup-form.px-5
+                            div.form-group.mb-4 
+                                input.form-control.company-name.p-2(required type="text" placeholder="Company Name" name="company")
+                            div.form-group.mb-4 
+                                input.form-control.company-name.p-2(required type="email" placeholder="Company Email" name="email")
+                            div.form-group.mb-4 
+                                input.form-control.company-name.p-2(required type="number" placeholder="Mobile-Number" name="mobile")
+                            div.form-group.mb-4 
+                                input.form-control.company-name.p-2(required type="password" placeholder="Password" name="password")
+                            div.form-group.mb-4 
+                                input.form-control.company-name.p-2(required type="text" placeholder="Company Name")
+                            div.form-group.mb-4 
+                                button.btn.btn-primary.signup-btn(type="submit") Signup
+                                button.btn.btn-danger.ml-6
+                                    span Processing
+                            p Already have an Account?
+                                a(href="#" id="login-modal-request") Click Here To Login 

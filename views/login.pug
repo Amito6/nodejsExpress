@@ -1,0 +1,20 @@
+div.modal#login-modal.animate__animated.animate__zoomIn 
+    div.modal-dialog.modal-lg.modal-dialog-centered 
+        div.modal-content 
+            div.modal-body.p-5
+                div.row 
+                    div.col-md-6.d-flex.justify-content-center.align-items-center 
+                        img(src="images/signup.jpg", width="100%" alt="")
+                    div.col-md-6.mt-5
+                        h1.display-4.fw-bold(style="font-size:20px") Welcome To Login Page 
+                        form#login-form.mt-3
+                            div.form-group.mb-4
+                                input.form-control.p-2(type="email" placeholder="company Email" name="email") 
+                            div.form-group.mb-4
+                                input.form-control.p-2(type="password" placeholder="Password" name="password") 
+                            div.form-group.mb-4 
+                                button.btn.btn-primary.login-btn(type="submit") Login 
+                                button.btn.btn-danger.disabled.d-none.btn-spinner 
+                                    span Processing 
+                            p Don't Have an Account ? 
+                                a.mx-1(href="#" id="signup-modal-request") Register Now
